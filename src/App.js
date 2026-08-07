@@ -7,15 +7,28 @@ const API= FootballApi()
 function App() {
   
   const [search, setSearch] = useState("")
-  const [result, setResult] = useState([])
+  const [Players, setPlayers] = useState([])
+  const [Team, setTeams] = useState([])
   const handleChange = (event) =>{
     setSearch(event.target.value)
   }
   useEffect(()=>{
+    if(search.trim()===""){
+      return
+    }
 
     const timer = setTimeout(async()=>{
-      const data = await API._getplayers(search)
-      setResult(data)
+      const players = await API._getplayers(search)
+      const teams = await API._getteams(search)
+      setTeams(
+        teams
+      )
+      setPlayers(
+        players
+      )
+      console.log(players,
+        teams
+      )
     },300)
     return()=>{
       clearTimeout(timer)
@@ -27,7 +40,8 @@ function App() {
       <Context.Provider value={{
         handleChange,
         search,
-        result
+        Team,
+        Players
       }}>
         <Main />
       </Context.Provider>
