@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import FootballApi from './api/FootballApi';
 import './App.css';
-
+import Context from './context/Context';
+import Main from './pages/Main';
+import { useEffect, useState } from 'react';
+const API= FootballApi()
 function App() {
+  
+  const [search, setSearch] = useState("")
+  const [result, setResult] = useState([])
+  const handleChange = (event) =>{
+    setSearch(event.target.value)
+  }
+  useEffect(()=>{
+
+    const timer = setTimeout(async()=>{
+      const data = await API._getplayers(search)
+      setResult(data)
+    },300)
+    return()=>{
+      clearTimeout(timer)
+    }
+  },[search])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Context.Provider value={{
+        handleChange,
+        search,
+        result
+      }}>
+        <Main />
+      </Context.Provider>
     </div>
   );
 }
