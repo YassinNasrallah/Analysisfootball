@@ -5,7 +5,7 @@
   --ink: #10151f;
   --ink-soft: #5b6472;
   --line: #e3e5e9;
-  --gold: #c9a227;
+  --gold: #D4A017;
   --gold-soft: #f4ecd2;
   --navy: #17264a;
 
@@ -44,6 +44,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-items: center;
     padding: 15px 60px;
     border-bottom: 1px solid var(--line);
     background: var(--bg);
@@ -66,24 +67,9 @@ body{
     cursor: pointer;
 }
 
-.navlinks li::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--gold);
-    transition: width 0.25s ease;
-}
 
-.navlinks li:hover::after,
-.navlinks li.active::after{
-    width: 100%;
-}
-
-.navlinks li.active{
-    color: var(--navy);
+.navlinks li:hover{
+    color: var(--gold);
 }
 
 /* ===== Search ===== */
@@ -95,7 +81,7 @@ body{
     width: 100%;
     max-width: 300px;
     padding: 10px 14px;
-    border: 1px solid var(--line);
+    border: 1px  solid var(--line);
     border-radius: 6px;
     background: var(--surface);
     font-family: var(--font-body);
@@ -174,4 +160,145 @@ body{
     margin-top: 2px;
 }
 
+.hero{
+    margin: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
 
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 20px;
+    gap: 10px;
+}
+.hero-content h1{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 55px;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+.hero-content h2{
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+}
+.hero-content p{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    width: 70%;
+}
+
+.hero-image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ===== Last matches — UCL matchday style (light) ===== */
+.lastMatches{
+    padding: 40px 60px;
+}
+
+.lastMatches > h2{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.match-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 14px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    cursor: pointer;
+}
+
+.match-card:hover{
+    border-color: var(--gold);
+   
+}
+
+.match-card .team{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 0;
+}
+
+.match-card .team:last-child{
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.match-card .team img{
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.match-card .team h2{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+
+.match-card .result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+}
+
+.match-card .result h2{
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gold);
+}
+
+.match-card > span{
+    flex: 0 0 auto;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    background: var(--gold-soft);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 640px){
+    .lastMatches{ padding: 24px; }
+    .match-card{ padding: 14px 16px; gap: 10px; }
+    .match-card .team h2{ font-size: 12px; }
+}

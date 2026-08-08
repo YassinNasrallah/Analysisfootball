@@ -3,6 +3,8 @@ import './App.css';
 import Context from './context/Context';
 import Main from './pages/Main';
 import { useEffect, useState } from 'react';
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import Matchdetails from './pages/Matchdetails';
 const API= FootballApi()
 function App() {
   
@@ -41,9 +43,16 @@ function App() {
         handleChange,
         search,
         Team,
-        Players
+        Players,
+        API
       }}>
-        <Main />
+        <Routes>
+         <Route path='/' element={<Main />} />
+         <Route path='/fixtures/:id' element={<Matchdetails />} />
+        </Routes>
+
+       
+        
       </Context.Provider>
     </div>
   );

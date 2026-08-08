@@ -37,8 +37,6 @@ const Suggestions = () => {
                       </h3>
                       <p>club / {clubs.team.country}</p>
                   </div>
-                    
-                
                 </div> 
             ))}
         </div>
