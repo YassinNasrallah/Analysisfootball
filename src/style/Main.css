@@ -296,7 +296,125 @@ body{
     align-items: center;
     justify-content: center;
 }
+.matchdetails-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1a1a1a;
+}
 
+/* Score header */
+.details {
+    display: flex;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.details h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.details img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.details h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Statistics panel */
+.statistics {
+    margin-top: 2rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.statistics-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.statistics-header h2:first-child {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.statistics-header h2:nth-child(2) {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+.statistics-header h2:last-child {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.stat-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0;
+}
+
+.stat-row span:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.stat-row span:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+.stat-row strong {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: capitalize;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .details h2 {
+        font-size: 1.75rem;
+    }
+
+    .details img {
+        width: 40px;
+        height: 40px;
+    }
+}
 @media (max-width: 640px){
     .lastMatches{ padding: 24px; }
     .match-card{ padding: 14px 16px; gap: 10px; }

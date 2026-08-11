@@ -11,6 +11,7 @@ function App() {
   const [search, setSearch] = useState("")
   const [Players, setPlayers] = useState([])
   const [Team, setTeams] = useState([])
+  const [loading, setloading,]= useState(true)
   const handleChange = (event) =>{
     setSearch(event.target.value)
   }
@@ -44,15 +45,14 @@ function App() {
         search,
         Team,
         Players,
+        setloading,
+        loading,
         API
       }}>
         <Routes>
          <Route path='/' element={<Main />} />
          <Route path='/fixtures/:id' element={<Matchdetails />} />
         </Routes>
-
-       
-        
       </Context.Provider>
     </div>
   );
