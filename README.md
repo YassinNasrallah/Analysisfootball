@@ -181,34 +181,6 @@ A custom loading animation was also added to the project.
 * REST API
 * Git / GitHub
 
-## ⚠️ API Limitations
-
-The football API free plan has a daily request limit.
-
-When the limit is reached, the API can return:
-
-```text
-429 Too Many Requests
-```
-
-Because of this limitation, API requests are being handled carefully, including search debouncing and empty-search prevention.
-
-## 🗺️ Next Steps
-
-* [ ] Improve loading fade-in/fade-out animation
-* [ ] Add player details page
-* [ ] Add player statistics
-* [ ] Add team details page
-* [ ] Add club information
-* [ ] Add recent matches for teams
-* [ ] Add wins / losses / draws analysis
-* [ ] Add league standings
-* [ ] Add more match statistics
-* [ ] Improve error states
-* [ ] Build responsive UI
-* [ ] Add football analysis dashboard
-* [ ] Improve API request optimization
-
 ## 👨‍💻 Author
 
 **Yassin Nasrallah**
