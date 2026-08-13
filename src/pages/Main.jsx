@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from 'react'
 import Header from '../components/header/Header'
 import Navigation from '../navigation/Navigation'
@@ -41,10 +40,7 @@ const Main = () => {
             <Lastmatches />
         </Context.Provider>
     </>
-)}
-        
-       
-       
+)}  
     </div>
   )
 }

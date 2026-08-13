@@ -1,33 +1,37 @@
 import React from 'react'
-import uclwiner from '../../assest/uclWinner.jfif'
+import heroimage from '../../assest/hero-image.png'
 const Header = () => {
   return (
   <div className="hero">
-  <div className="hero-content">
-    <span className="hero-tag">CHAMPIONS LEAGUE</span>
+  
+      <div className="hero-content">
 
-    <h1>
-      PSG 
-      <br />Make 
-      <br />History 
-      <br />Again
-    </h1>
+        <span className="hero-tag">FOOTBALL ANALYSIS</span>
 
-    <h2>
-      Back-to-Back Champions League Champions
-    </h2>
+        <h1>
+          Understand
+          <br />
+          The Game
+          <br />
+          Beyond
+          <br />
+          The Score
+        </h1>
 
-      <p className='descrption'>
-      Paris Saint-Germain defeat Arsenal on penalties
-      to claim another European crown.
-    </p>
+        <h2>
+          Matches, Players & Statistics
+        </h2>
 
-   
-  </div>
+        <p className="descrption">
+          Explore match results, player performances, team statistics,
+          and detailed football data — all in one place.
+        </p>
+
+      </div>
 
   <div className="hero-image">
     <img
-      src={uclwiner}
+      src={heroimage}
       alt="PSG celebrating Champions League victory"
       loading='lazy'
     />

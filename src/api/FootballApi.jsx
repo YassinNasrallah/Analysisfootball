@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FootballApi = () => {
- const API_key = 'your-own-key'
+ const API_key = 'bbf173f9ce928fa2fa132dc984fe75e3'
  
  const _getplayers = async(search)=>{
     const result = await fetch(`https://v3.football.api-sports.io/players/profiles?&search=${search}`,{
@@ -63,13 +63,31 @@ const FootballApi = () => {
 
     return data.response
 }
+ const _getPlayersById = async (id) => {
+    const result = await fetch(
+        `https://v3.football.api-sports.io/players?id=${id}&season=2022`,
+        {
+            headers: {
+                "x-apisports-key": API_key
+            }
+        }
+    )
+
+    const data = await result.json()
+
+    console.log(data)
+
+    return data.response
+}
+
 
  return {
     _getplayers,
     _getteams,
     _getMatches,
     _getMatchById,
-    _getstate
+    _getstate,
+    _getPlayersById
  }
 }
 
