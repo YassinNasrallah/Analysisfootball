@@ -1,0 +1,276 @@
+.player-container {
+    width: min(1100px, 92%);
+    margin:80px auto;
+
+}
+
+
+
+
+.playerinfo {
+    width: 100%;
+}
+
+.player-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 25px;
+
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Neon top line */
+
+.player-profile::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        transparent 60%
+    );
+}
+
+
+
+
+/* =========================================================
+   PLAYER IMAGE
+========================================================= */
+
+.playerimage {
+    width: 85px;
+    height: 85px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: var(--panel);
+
+    border: 1px solid var(--line);
+    border-radius: 4px;
+
+    position: relative;
+}
+
+.playerimage::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    border: 1px solid rgba(124, 252, 0, 0.15);
+
+    pointer-events: none;
+}
+
+.playerimage img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   PLAYER CONTENT
+========================================================= */
+
+.player-profile-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+.player-tag {
+    width: fit-content;
+
+    color: var(--accent);
+
+    font-family: var(--font-mono);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.player-profile-content h1 {
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family: var(--font-display);
+
+    font-size: 32px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+}
+
+.player-nationality {
+    margin: 0;
+
+    color: var(--ink-soft);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PLAYER META
+========================================================= */
+
+.player-meta {
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 15px;
+}
+
+.player-meta div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 55px;
+}
+
+.player-meta span {
+    color: var(--ink-soft);
+
+    font-family: var(--font-mono);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.player-meta strong {
+    color: var(--ink);
+
+    font-family: var(--font-mono);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PLAYER STATISTICS
+========================================================= */
+
+.player-state {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 20px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+
+/* Each statistic */
+
+.player-state > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 20px;
+
+    background: var(--panel);
+
+    position: relative;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.player-state > div:hover {
+    background: var(--surface);
+}
+
+
+/* Vertical separator */
+
+.player-state > div:not(:last-child) {
+    border-right: 1px solid var(--line);
+}
+
+
+/* Statistic label */
+
+.player-state span {
+    color: var(--ink-soft);
+
+    font-family: var(--font-mono);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+/* Statistic number */
+
+.player-state strong {
+    color: var(--accent);
+
+    font-family: var(--font-display);
+
+    font-size: 32px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    text-shadow:
+        0 0 12px rgba(124, 252, 0, 0.25);
+}

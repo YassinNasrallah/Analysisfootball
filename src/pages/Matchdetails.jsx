@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import Context from '../context/Context'
 import Matchresult from '../components/matchdetails/Matchresult'
 import Statitistics from '../components/matchdetails/Statitistics'
+import Navigation from '../navigation/Navigation'
+import '../style/Matchstate.css'
 
 const Matchdetails = () => {
     const { API } = useContext(Context)
@@ -12,36 +14,29 @@ const Matchdetails = () => {
 
     useEffect(() => {
         const Matches = async () => {
-            
-
             const match = await API._getMatchById(id)
             const state = await API._getstate(id)
-
             console.log("Match details:", match)
-
             setMatchdetails(match)
             setStatistics(state)
-            console.log('matchstate' ,state)
         }
-
         Matches()
-    }, [id, API])
+    }, [id])
 
     return (
+        <>
+        <Navigation />
+       
         <div className="matchdetails-container">
-          
            <Context.Provider value={{
             matchDetails,
             statistics
            }}>
             <Matchresult />
             <Statitistics />
-
-
-           </Context.Provider>
-
-          
+           </Context.Provider> 
         </div>
+         </>
     )
 }
 
