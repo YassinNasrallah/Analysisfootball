@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FootballApi = () => {
- const API_key = 'your-own-code'
+ const API_key = ''
  
  const _getplayers = async(search)=>{
     const result = await fetch(`https://v3.football.api-sports.io/players/profiles?&search=${search}`,{
