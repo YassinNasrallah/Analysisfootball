@@ -32,7 +32,7 @@ const Header = () => {
   <div className="hero-image">
     <img
       src={heroimage}
-      alt="PSG celebrating Champions League victory"
+      alt='hero-image'
       loading='lazy'
     />
    

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Search from '../components/Search'
+import Search from '../components/Searchbar'
 import Suggestions from './Suggestions'
 import Context from '../context/Context'
 const Searchwrapper = () => {
